@@ -53,6 +53,61 @@ The following parameters were recorded during the experiment:
 <img width="1600" height="1270" alt="overall_performance_dashboard" src="https://github.com/user-attachments/assets/233d2e74-cba4-4007-b012-290730cfae72" />
 <img width="1200" height="750" alt="total_events_comparison" src="https://github.com/user-attachments/assets/106cab65-82d8-41cd-a7e7-3a43ead8adde" />
 
+## 3. Virtual Machine Specifications
+To guarantee scientific accuracy and eliminate resource skewing, identical configurations were assigned to both VMs during setup:
+
+| Resource Parameter | Proxmox VE (Type-1) | VMware Workstation (Type-2) | 
+| :--- | :--- | :--- | 
+| **VM Name** | `CC-Experiment1-Type1` | `CC-Experiment1-Type2` | 
+| **Guest OS** | Ubuntu 22.04 LTS (ISO) | Ubuntu 22.04 LTS (ISO) | 
+| **CPU Allocation**| 2 vCPU (1 Socket, 2 Cores) | 2 vCPU (1 Processor, 2 Cores) | 
+| **RAM Allocation**| 2048 MiB (2.0 GB) | 2048 MB (2.0 GB) | 
+| **Virtual Disk** | 20.0 GB (`local-lvm`) | 20.0 GB (Single File) | 
+| **Network Adapter**| Bridge (`vmbr0`) | NAT | 
+| **Benchmark Tool** | `sysbench` | `sysbench` | 
+
+---
+
+## 4. Experimental Procedure & Pre-Setups
+
+### Part A: Type-1 Hypervisor Setup (Proxmox VE)
+1. **Access**: Logged into the Proxmox VE web interface via `https://<PROXMOX_SERVER_IP>:8006`.
+2. **VM Creation Stages**: `General -> OS -> System -> Disks -> CPU -> Memory -> Network -> Confirm`
+3. **Configuration**: 
+   - **OS**: Selected `ubuntu-22.04.iso` from local storage.
+   - **Disks**: Allocated 20 GB on `local-lvm`.
+   - **CPU**: 1 Socket, 2 Cores (Total 2 vCPU).
+   - **Memory**: 2048 MiB.
+   - **Network**: Assigned to `vmbr0` bridge.
+4. **Installation**: Started the VM, opened the Console, and completed the standard Ubuntu Normal Installation.
+5. **Verification**: Used `hostnamectl`, `lscpu`, `free -h`, and `df -h` to verify 2 Cores, 2GB RAM, and 20GB Disk.
+
+### Part B: Type-2 Hypervisor Setup (VMware Workstation)
+1. **Access**: Launched VMware Workstation and selected "Create a New Virtual Machine" (Typical Configuration).
+2. **Configuration**:
+   - **OS**: Mounted `ubuntu-22.04.iso`.
+   - **Disks**: Set Maximum Disk Size to 20 GB (Stored as a single file).
+   - **Hardware Customization**: Set Memory to 2048 MB, Processors to 1 (with 2 Cores), and Network Adapter to NAT.
+3. **Installation**: Powered on the VM, erased the virtual disk, and completed the standard Ubuntu Normal Installation.
+4. **Verification**: Executed the same terminal commands (`lscpu`, `free -h`) to confirm the identical allocation of hardware resources.
+
+### Part C: Benchmark Execution
+On both machines, the following commands were executed to run the test:
+```bash
+sudo apt update
+sudo apt install sysbench -y
+sysbench cpu --cpu-max-prime=20000 run
+```
+
+### 5. Sysbench Screenshot Comparison
+
+Raw console verification of the benchmark results:
+
+* **Proxmox VE Output:** `images/1.png`
+* **VMware Workstation Output:** `images/2.png`
+
+---
+
 
 ## Performance Analysis
 
