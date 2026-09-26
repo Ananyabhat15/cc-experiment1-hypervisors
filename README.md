@@ -1,5 +1,9 @@
 # Hypervisors
 
+A hypervisor, also called a Virtual Machine Monitor (VMM), is software or firmware that allows multiple virtual machines (VMs) to run on a single physical computer.
+
+It manages and allocates the physical hardware resources—such as CPU, memory, storage, and network—among different virtual machines while keeping them isolated from each other.
+
 ## Objectives
 
 The main objectives of this experiment are:
@@ -136,30 +140,40 @@ This experiment helped in understanding how the underlying hypervisor architectu
 ## Repository Structure
 
 ```text
-cc-experiment1-hypervisors/
+Repository
 │
-├── screenshots/
-│   ├── type1-proxmox/
-│   │   ├── 01-proxmox-dashboard.png
-│   │   ├── 02-proxmox-vm-configuration.png
-│   │   ├── 03-proxmox-vm-running.png
-│   │   ├── 04-proxmox-ubuntu-console.png
-│   │   ├── 05-proxmox-system-configuration.png
-│   │   ├── 06-proxmox-sysbench-result.png
-│   │   └── 07-proxmox-resource-monitoring.png
-│   │
-│   ├── type2-vmware/
-│   │   ├── 01-vmware-vm-configuration.png
-│   │   ├── 02-vmware-vm-running.png
-│   │   ├── 03-vmware-system-configuration.png
-│   │   └── 04-vmware-sysbench-result.png
-│   │
-│   └── comparison/
-│       └── 01-hypervisor-performance-comparison.png
+├── comparison/
+│   ├── 01-hypervisor-performance-comparison.png
+│   ├── events_per_second_comparison.jpeg
+│   ├── latency_comparison.jpeg
+│   ├── overall_performance_dashboard.jpeg
+│   └── total_events_comparison.jpeg
 │
 ├── results/
 │   └── performance-analysis.md
 │
+├── screenshots/
+│   ├── type1-proxmox/
+│   │   ├── 01-proxmox-dashboard.jpeg
+│   │   ├── 02-proxmox-vm-configuration.jpeg
+│   │   ├── 03-proxmox-vm-running.jpeg
+│   │   ├── 03-proxmox-vm-running2.jpeg
+│   │   ├── 04-proxmox-ubuntu-console.jpeg
+│   │   ├── 05-proxmox-vm-configuration.jpeg
+│   │   ├── 06-proxmox-sysbench-result.png
+│   │   ├── 07-01-proxmox-resource-monitoring.png
+│   │   ├── 07-02-proxmox-resource-monitoring.png
+│   │   ├── 07-03-proxmox-resource-monitoring.png
+│   │   └── 07-04-proxmox-resource-monitoring.png
+│   │
+│   └── type2-vmware/
+│       ├── 01-vmware-vm-configuration.png
+│       ├── 02-vmware-vm-running.png
+│       ├── 03-vmware-system-configuration.jpeg
+│       └── 04-vmware-sysbench-result.jpeg
+│
+├── scripts/
+│   ├── benchmark.sh
+│   └── generate_plots.py
+│
 └── README.md
-
-
