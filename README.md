@@ -21,9 +21,10 @@ A **Type 2 hypervisor**, runs as an application on top of an existing operating 
 
 The `type2-hypervisor` folder contains images related to Type 2 hypervisors and their setup/working.
 
+<img width="800" height="800" alt="type1-type2-hypervisor" src="https://github.com/user-attachments/assets/8a0f1bde-8c59-4a38-9072-aa903f880d73" />
 
 
-## 🔍 Type 1 vs Type 2
+##  Type 1 vs Type 2
 
 | Feature     | Type 1                                  | Type 2                         |
 | ----------- | --------------------------------------- | ------------------------------ |
