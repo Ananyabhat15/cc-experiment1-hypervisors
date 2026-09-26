@@ -114,8 +114,12 @@ run starts the benchmark and displays performance metrics such as execution time
 
 Raw console verification of the benchmark results:
 
-* **Proxmox VE Output:** `images/1.png`
-* **VMware Workstation Output:** `images/2.png`
+* **Proxmox VE Output:** 
+  <img width="1920" height="1020" alt="06-proxmox-sysbench-result" src="https://github.com/user-attachments/assets/7d8a3d72-9716-4555-ade3-051b68632caf" />
+
+* **VMware Workstation Output:**
+  <img width="1280" height="720" alt="04-vmware-sysbench-result" src="https://github.com/user-attachments/assets/dd1349a2-4085-4efb-8c34-57ed04fc63fc" />
+
 
 ---
 
