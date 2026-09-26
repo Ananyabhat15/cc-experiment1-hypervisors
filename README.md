@@ -45,6 +45,14 @@ The following parameters were recorded during the experiment:
 | Events per Second | 1,453.98 | 639.70 |
 | Average Latency | 0.69 ms | 1.56 ms |
 
+## Graphs
+
+<img width="1200" height="750" alt="events_per_second_comparison" src="https://github.com/user-attachments/assets/16b31c23-682c-4afb-bb12-f604c66af36d" />
+<img width="1500" height="900" alt="latency_comparison" src="https://github.com/user-attachments/assets/a9ac86ff-555b-450c-b276-cff930336102" />
+<img width="1600" height="1270" alt="overall_performance_dashboard" src="https://github.com/user-attachments/assets/233d2e74-cba4-4007-b012-290730cfae72" />
+<img width="1200" height="750" alt="total_events_comparison" src="https://github.com/user-attachments/assets/106cab65-82d8-41cd-a7e7-3a43ead8adde" />
+
+
 ## Performance Analysis
 
 The benchmark was run for approximately **10 seconds** on both hypervisors.
