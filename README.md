@@ -81,7 +81,7 @@ To guarantee scientific accuracy and eliminate resource skewing, identical confi
    - **OS**: Selected `ubuntu-22.04.iso` from local storage.
    - **Disks**: Allocated 20 GB on `local-lvm`.
    - **CPU**: 1 Socket, 2 Cores (Total 2 vCPU).
-   - **Memory**: 2048 MiB.
+   - **Memory**: 1024 MiB.
    - **Network**: Assigned to `vmbr0` bridge.
 4. **Installation**: Started the VM, opened the Console, and completed the standard Ubuntu Normal Installation.
 5. **Verification**: Used `hostnamectl`, `lscpu`, `free -h`, and `df -h` to verify 2 Cores, 2GB RAM, and 20GB Disk.
