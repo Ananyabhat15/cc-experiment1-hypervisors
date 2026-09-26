@@ -97,11 +97,18 @@ To guarantee scientific accuracy and eliminate resource skewing, identical confi
 
 ### Part C: Benchmark Execution
 On both machines, the following commands were executed to run the test:
-```bash
-sudo apt update
-sudo apt install sysbench -y
-sysbench cpu --cpu-max-prime=20000 run
-```
+
+**sudo apt update**
+Updates the list of available packages and their latest versions from Ubuntu repositories.
+
+**sudo apt install sysbench -y**
+Installs Sysbench, a tool used for benchmarking system performance.
+-y automatically confirms the installation.
+
+**sysbench cpu --cpu-max-prime=20000 run**
+Runs a CPU benchmark using Sysbench.
+--cpu-max-prime=20000 tells Sysbench to calculate prime numbers up to 20,000 as the workload.
+run starts the benchmark and displays performance metrics such as execution time, events/sec, and latency.
 
 ### 5. Sysbench Screenshot Comparison
 
